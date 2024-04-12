@@ -1,0 +1,105 @@
+git blame -L [linhaInicial],[linhaFinal] [file]: Mostra quem modificou as linhas específicas de um arquivo e em qual commit.
+git shortlog: Sumariza os logs de commit em uma forma legível.
+git shortlog -s: Sumariza os logs de commit em uma forma legível, mostrando apenas o número de commits por autor.
+git shortlog -sn: Sumariza os logs de commit em uma forma legível, mostrando o número de commits por autor em ordem numérica.
+git shortlog -sn --all: Sumariza os logs de commit de todas as ramificações em uma forma legível, mostrando o número de commits por autor em ordem numérica.
+git revert --no-commit [commit]: Desfaz as alterações introduzidas por um commit específico, mas não faz um novo commit. Útil para fazer ajustes antes de confirmar.
+git revert --abort: Aborta uma operação de revert em andamento.
+git reflog: Exibe o registro de referências, que registra movimentos de cabeças e outros eventos de ref.
+git clean -fd: Remove arquivos não rastreados e diretórios.
+git clean -xfd: Remove arquivos não rastreados, diretórios e submódulos.
+git remote -v: Lista os repositórios remotos e suas URLs.
+git remote show [remote]: Mostra informações detalhadas sobre um repositório remoto.
+git remote rename [old-name] [new-name]: Renomeia um repositório remoto.
+git remote rm [remote]: Remove um repositório remoto.
+git fetch [remote] [branch]: Obtém as alterações de um repositório remoto sem mesclá-las.
+git pull --rebase [remote] [branch]: Obtém as alterações de um repositório remoto e as mescla na ramificação local, reaplicando as confirmações locais no topo.
+git push --force [remote] [branch]: Força o push de alterações locais para um repositório remoto, substituindo o histórico existente.
+git push --all [remote]: Envia todas as ramificações locais para um repositório remoto.
+git push --tags [remote]: Envia todas as tags locais para um repositório remoto.
+git push --delete [remote] [branch]: Exclui uma ramificação remota do repositório.
+git push [remote] :[branch]: Exclui uma ramificação remota do repositório (forma abreviada).
+git branch -d [branch]: Exclui uma ramificação local após mesclar as alterações.
+git branch -D [branch]: Força a exclusão de uma ramificação local, mesmo que as alterações não tenham sido mescladas.
+git checkout -b [nome] [commit]: Cria uma nova ramificação a partir de um commit específico.
+git cherry-pick [commit1] [commit2]: Aplica os commits específicos, em ordem, à ramificação atual.
+git cherry-pick [commit1]..[commit2]: Aplica uma série de commits entre dois commits específicos à ramificação atual.
+git bisect start: Inicia uma sessão de bissecção para encontrar um commit que introduziu um bug.
+git bisect bad: Marca o commit atual como ruim (contém o bug).
+git bisect good [commit]: Marca um commit como bom (não contém o bug).
+git bisect reset: Aborta a sessão de bissecção e volta para o estado original.
+git blame -M [file]: Mostra quem modificou cada linha de um arquivo, mesmo que o arquivo tenha sido movido.
+git blame -C [file]: Mostra quem modificou cada linha de um arquivo, mesmo que o conteúdo tenha sido copiado.
+git commit --amend: Adiciona alterações ao commit mais recente.
+git commit --amend -m "[nova mensagem]": Altera a mensagem do commit mais recente.
+git commit --amend --no-edit: Adiciona alterações ao commit mais recente sem alterar a mensagem.
+git commit --fixup [commit]: Cria um commit de "correção" que será mesclado com um commit específico durante um rebase interativo.
+git commit --squash [commit]: Cria um commit "esmagado" que será mesclado com um commit específico durante um rebase interativo.
+git reset --soft HEAD~1: Desfaz o último commit, mas mantém as alterações no diretório de trabalho.
+git reset --mixed HEAD~1: Desfaz o último commit e remove as alterações do índice, mantendo as alterações no diretório de trabalho.
+git reset --soft [commit]: Move a ramificação atual para um commit específico, mantendo as alterações nos estágios.
+git reset --mixed [commit]: Move a ramificação atual para um commit específico, removendo as alterações dos estágios, mas mantendo-as no diretório de trabalho.
+git reset --hard [commit]: Move a ramificação atual para um commit específico, descartando todas as alterações locais.
+git reset --merge ORIG_HEAD: Aborta um merge em andamento e restaura o HEAD original.
+git stash save "[mensagem]": Armazena as alterações locais com uma mensagem descritiva.
+git stash list: Lista todas as entradas do stash.
+git stash apply [stash]: Aplica as alterações armazenadas temporariamente sem removê-las do stash.
+git stash pop [stash]: Aplica as alterações armazenadas temporariamente e as remove do stash.
+git stash drop [stash]: Remove uma entrada específica do stash.
+git stash clear: Remove todas as entradas do stash.
+git submodule foreach 'comando': Executa um comando em cada submódulo.
+git log --since="2 weeks ago": Exibe o histórico de commits nos últimos dois semanas.
+git log --author="[autor]": Exibe o histórico de commits por um autor específico.
+git log --grep="[palavra-chave]": Exibe o histórico de commits que contêm uma palavra-chave específica.
+git log --oneline: Exibe o histórico de commits em uma linha por commit.
+git log --graph: Exibe o histórico de commits com gráficos.
+git log --decorate: Exibe o histórico de commits com decorações (ramificações, tags, etc.).
+git log --stat: Exibe o histórico de commits com estatísticas resumidas de alterações.
+git log --format="%h - %an, %ar : %s": Exibe o histórico de commits em um formato personalizado.
+git log --name-status: Exibe o histórico de commits com uma lista de arquivos modificados e seus estados.
+git log --graph --all --decorate: Exibe o histórico de commits com gráficos, incluindo todas as ramificações e tags.
+git tag -l: Lista todas as tags disponíveis.
+git tag -a [nome] -m "[mensagem]": Cria uma nova tag anotada.
+git tag -d [nome]: Exclui uma tag local.
+git push --tags: Envia todas as tags locais para um repositório remoto.
+git push [remote] :[tag]: Exclui uma tag remota do repositório.
+git revert --no-commit [commit1]..[commit2]: Desfaz uma série de commits específicos, mas não faz um novo commit.
+git revert --no-commit HEAD~[n]: Desfaz os últimos n commits, mas não faz um novo commit.
+git remote add [nome] [URL]: Adiciona um novo repositório remoto.
+git remote -v: Lista os repositórios remotos e suas URLs.
+git remote show [remote]: Mostra informações detalhadas sobre um repositório remoto.
+git remote rename [old-name] [new-name]: Renomeia um repositório remoto.
+git remote rm [remote]: Remove um repositório remoto.
+git branch -m [nome]: Renomeia a ramificação atual.
+git branch -m [old-name] [new-name]: Renomeia uma ramificação específica.
+git branch -d -r [remote/branch]: Exclui uma ramificação remota do repositório.
+git branch -m [nome]: Renomeia a ramificação atual.
+git branch -m [old-name] [new-name]: Renomeia uma ramificação específica.
+git branch -d -r [remote/branch]: Exclui uma ramificação remota do repositório.
+git checkout --track [remote/branch]: Cria e muda para uma nova ramificação local que rastreia uma ramificação remota.
+git branch -vv: Exibe informações detalhadas sobre ramificações locais e suas ramificações remotas associadas.
+git branch -u [remote/branch]: Define uma ramificação remota para rastrear a ramificação atual.
+git branch --merged: Lista todas as ramificações que foram mescladas na ramificação atual.
+git branch --no-merged: Lista todas as ramificações que não foram mescladas na ramificação atual.
+git rebase -i [commit]: Inicia um rebase interativo para reescrever a história de commits.
+git rebase -i HEAD~[n]: Inicia um rebase interativo dos últimos n commits.
+git rebase --abort: Aborta um rebase interativo em andamento e restaura o estado original.
+git rebase --continue: Continua um rebase interativo após resolver conflitos.
+git rebase --skip: Pula um commit durante um rebase interativo.
+git rebase --edit-todo: Abre o arquivo TODO durante um rebase interativo para edição manual.
+git rebase --onto [branch] [commit1] [commit2]: Move uma série de commits de uma ramificação para outra.
+git cherry: Exibe uma lista de commits que estão na ramificação atual, mas não na outra ramificação especificada.
+git cherry -v: Exibe uma lista de commits que estão na ramificação atual, mas não na outra ramificação especificada, com detalhes verbais.
+git archive --format=zip --output=[caminho/arquivo.zip] [branch]: Exporta um snapshot de um ramificação específica para um arquivo zip.
+git grep [palavra-chave]: Procura por uma palavra-chave em todos os arquivos do diretório de trabalho.
+git grep [palavra-chave] [branch]: Procura por uma palavra-chave em todos os arquivos de uma ramificação específica.
+git ls-files: Lista todos os arquivos rastreados no diretório de trabalho.
+git ls-tree [branch]: Lista todos os arquivos em uma árvore de commit.
+git ls-remote [remote]: Lista todas as referências remotas.
+git ls-remote --tags [remote]: Lista todas as tags remotas.
+git ls-remote --heads [remote]: Lista todas as ramificações remotas.
+git submodule update --remote: Atualiza todos os submódulos para usar as versões mais recentes dos commits remotos.
+git submodule update --recursive: Atualiza todos os submódulos, incluindo submódulos aninhados.
+git submodule update --init --recursive: Inicializa e atualiza todos os submódulos, incluindo submódulos aninhados.
+git clean -n -d: Mostra quais diretórios não rastreados seriam removidos.
+git clean -f -d: Remove arquivos e diretórios não rastreados.
